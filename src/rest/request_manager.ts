@@ -1,3 +1,8 @@
+// deno-lint-ignore-file no-explicit-any
+import { cookie, eventHandlers, hmacSignedSession } from "../bot.ts";
+import { RequestMethods } from "../types/lib/rest/request_methods.ts";
+import { USER_AGENT } from "../utils/constants.ts";
+
 export const RequestManager = {
   get: (url: string, body?: Record<string, any>) => {
     return runMethod("GET", url, body);
