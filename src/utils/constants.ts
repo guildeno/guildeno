@@ -2,7 +2,8 @@ export const USER_AGENT = "GuildedBot (https://github.com/itohatweb/guildeno, 0.
 
 export const BASE_GATEWAY_URL = "wss://api.guilded.gg/socket.io";
 
-export const BASE_URL = "https://www.guilded.gg/api";
+// TODO: change it back to "https://guilded.gg/api" when it got stable
+export const BASE_URL = "https://api.guilded.gg";
 
 export const IMAGE_BASE_URL = "https://s3-us-west-2.amazonaws.com/www.guilded.gg";
 
