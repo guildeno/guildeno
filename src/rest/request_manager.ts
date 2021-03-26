@@ -1,3 +1,21 @@
+export const RequestManager = {
+  get: (url: string, body?: Record<string, any>) => {
+    return runMethod("GET", url, body);
+  },
+  post: (url: string, body?: Record<string, any>) => {
+    return runMethod("POST", url, body);
+  },
+  delete: (url: string, body?: Record<string, any>) => {
+    return runMethod("DELETE", url, body);
+  },
+  patch: (url: string, body?: Record<string, any>) => {
+    return runMethod("PATCH", url, body);
+  },
+  put: (url: string, body?: Record<string, any>) => {
+    return runMethod("PUT", url, body);
+  },
+};
+
 async function runMethod(method: RequestMethods, url: string, body?: Record<string, any>, retryCount = 0) {
   eventHandlers.debug?.({
     type: "requestCreate",
