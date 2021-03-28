@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Readme: Server invite shield
 
+### Fixed
+
+- Changelog: Version links
+
 ## [0.1.0] - 2021-03-28
 
 ### Added
@@ -52,3 +56,6 @@ TYPES:
 - Fixed
 - Security
  -->
+
+[unreleased]: https://github.com/itohatweb/guildeno/compare/0.1.0...main
+[0.1.0]: https://github.com/itohatweb/guildeno/compare/d8289344f143271f1156dbec582e6209bd95260b...0.1.0
