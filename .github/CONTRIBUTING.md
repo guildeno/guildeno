@@ -55,6 +55,7 @@ Please use the appropriate issue template.
 - Every contribution must be made under the Apache-2.0 License. We don't accept any sub licensing or simmilar.
 - For every new feature added you have to add at least one test case for it.
 - Do NOT use code from others unless they give you explicit permission.
+- Changelogs are important so always add a note to `CHANGELOG.md`.
 
 ### Small PRs
 
