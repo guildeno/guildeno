@@ -10,14 +10,14 @@ export const RequestManager = {
   post: (url: string, body?: Record<string, any>) => {
     return runMethod("POST", url, body);
   },
-  delete: (url: string, body?: Record<string, any>) => {
-    return runMethod("DELETE", url, body);
-  },
   patch: (url: string, body?: Record<string, any>) => {
     return runMethod("PATCH", url, body);
   },
   put: (url: string, body?: Record<string, any>) => {
     return runMethod("PUT", url, body);
+  },
+  delete: (url: string, body?: Record<string, any>) => {
+    return runMethod("DELETE", url, body);
   },
 };
 
