@@ -4,6 +4,8 @@ Guilded API Wrapper for Deno.
 
 Guilded follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
+[![Guilded](https://img.shields.io/badge/Guilded%20Server-Click%20To%20Join!-yellow)](https://www.guilded.gg/itohs-place)
+
 # WIP
 
 This module is still version 0 so heavy in development. Expect breaking changes without a major bump.
