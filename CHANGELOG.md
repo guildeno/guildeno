@@ -10,10 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Readme: Server invite shield
+- Readme: Guildeno Logo
 
 ### Fixed
 
 - Changelog: Version links
+- Readme: type
 
 ## [0.1.0] - 2021-03-28
 
