@@ -21,7 +21,7 @@ export class Collection<K, V> extends Map<K, V> {
   }
 
   last(): V | undefined {
-    return [...this.values()].pop()!;
+    return this.array()[this.size - 1];
   }
 
   random(): V | undefined {
