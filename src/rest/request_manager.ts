@@ -41,9 +41,7 @@ async function runMethod(method: RequestMethods, url: string, body?: Record<stri
 
   // No proxy so we need to handle all rate limiting and such
   try {
-    console.log("daurl", urlToUse, createRequestBody(body, method));
     const response = await fetch(urlToUse, createRequestBody(body, method));
-    console.log("daradu", response);
 
     if (response.status === 204) return undefined;
     return response.json();
@@ -61,8 +59,6 @@ function createRequestBody(body: Record<string, any> | undefined, method: Reques
     cookie: cookie,
     "User-Agent": USER_AGENT,
   };
-
-  console.log(hmacSignedSession);
 
   if (method === "GET") body = undefined;
 
