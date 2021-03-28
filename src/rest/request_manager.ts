@@ -66,10 +66,6 @@ function createRequestBody(body: Record<string, any> | undefined, method: Reques
 
   if (method === "GET") body = undefined;
 
-  // if (body?.reason) {
-  //   headers["X-Audit-Log-Reason"] = encodeURIComponent(body.reason);
-  // }
-
   if (body && !["GET", "DELETE"].includes(method)) {
     headers["Content-Type"] = "application/json";
   }
