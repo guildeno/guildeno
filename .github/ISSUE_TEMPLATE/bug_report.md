@@ -12,6 +12,7 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Import function '...'
 2. Use this arguments '....'
 3. Execute using '....'
@@ -24,9 +25,10 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. Windows]
- - Deno Version: [e.g. 1.8.8]
- - Version [e.g. 1.3.0]
+
+- OS: [e.g. Windows]
+- Deno Version: [e.g. 1.8.8]
+- Version [e.g. 1.3.0]
 
 **Additional context**
 Add any other context about the problem here.
