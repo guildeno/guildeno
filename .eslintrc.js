@@ -13,11 +13,15 @@ module.exports = {
     },
     plugins: ["@typescript-eslint"],
     rules: {
-        indent: ["error", 4],
+        indent: ["error", 4, { SwitchCase: 1 }],
         "linebreak-style": ["error", "unix"],
         quotes: ["error", "double"],
         semi: ["error", "always"],
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "capitalized-comments": ["error", "always"],
+        "multiline-comment-style": ["error", "starred-block"],
+        "no-inline-comments": ["error"],
+        "spaced-comment": ["error", "always", { exceptions: ["-", "+", "/"] }],
     },
 };
