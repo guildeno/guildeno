@@ -23,7 +23,6 @@ module.exports = {
         "multiline-comment-style": ["error", "starred-block"],
         "no-inline-comments": ["error"],
         "spaced-comment": ["error", "always", { exceptions: ["-", "+", "/"] }],
-        "require-await": ["error", "always"],
-        "no-floating-promises": "error",
+        "require-await": "error",
     },
 };
