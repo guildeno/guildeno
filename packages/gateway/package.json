@@ -1,6 +1,6 @@
 {
     "name": "@guildeno/gateway",
-    "version": "0.0.6",
+    "version": "0.1.0",
     "description": "Guildeno Gateway",
     "keywords": [
         "guildeno"
@@ -32,7 +32,7 @@
         "ws": "^8.5.0"
     },
     "devDependencies": {
-        "@guildeno/types": "^0.0.6",
+        "@guildeno/types": "^0.1.0",
         "@types/ws": "^8.5.3"
     }
 }
