@@ -105,7 +105,7 @@ export function createHelpers(op: CreateHelpersOptions) {
         // getMembers: (serverId: string) => {
         getMembers: async (serverId: string) => {
             return await op
-                .fetch<{ members: ServerMemberSummary }>("GET", op.routes.getMembers(serverId))
+                .fetch<{ members: ServerMemberSummary[] }>("GET", op.routes.getMembers(serverId))
                 .then((res) => res.members);
         },
 

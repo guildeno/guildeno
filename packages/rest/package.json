@@ -22,7 +22,7 @@
             "url": "http://www.apache.org/licenses/LICENSE-2.0"
         }
     ],
-    "main": "lib/rest.js",
+    "main": "lib/index.js",
     "directories": {
         "lib": "lib",
         "test": "__tests__"

@@ -8,7 +8,7 @@
     "author": "ITOH <to@itoh.at>",
     "homepage": "https://github.com/guildeno/guildeno#readme",
     "license": "Apache-2.0",
-    "main": "lib/gateway.js",
+    "main": "lib/index.js",
     "directories": {
         "lib": "lib",
         "test": "__tests__"
