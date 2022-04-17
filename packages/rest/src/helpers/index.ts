@@ -97,12 +97,7 @@ export function createHelpers(op: CreateHelpersOptions) {
         kickMember: async (serverId: string, userId: string) => {
             return await op.fetch<undefined>("DELETE", op.routes.kickMember(serverId, userId));
         },
-        // /**
-        //  * Get all members from a server.
-        //  *
-        //  * @method GET
-        //  */
-        // getMembers: (serverId: string) => {
+        /** Get all members from a server. */
         getMembers: async (serverId: string) => {
             return await op
                 .fetch<{ members: ServerMemberSummary[] }>("GET", op.routes.getMembers(serverId))

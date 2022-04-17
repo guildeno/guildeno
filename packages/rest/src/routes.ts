@@ -1,13 +1,13 @@
 import { GetMessages, GetDocs, SocialLinkType } from "@guildeno/types";
 
 /**
- * Create URL construction functions.
+ * URL route construction functions.
  *
  * The purpose of those constructors is to make it generally easier to make requests to Guilded.
  *
  * NOTE: Normally you do not need to use this.
  * All available handlers are available under `rest.handlers`.
- * AKA a lib internal function
+ * AKA a lib internal object.
  */
 export const routes = {
     /**
