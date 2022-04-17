@@ -6,7 +6,7 @@ Guilded API Wrapper for Node.js.
 
 Guildeno follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
-[![Guilded](https://img.shields.io/badge/Guilded%20Server-Click%20To%20Join!-yellow)](https://www.guilded.gg/itohs-place)
+[![Guilded](https://img.shields.io/badge/Guilded%20Server-Click%20To%20Join!-yellow)](https://www.guilded.gg/guildeno)
 
 # WIP
 

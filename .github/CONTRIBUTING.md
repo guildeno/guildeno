@@ -13,17 +13,17 @@ Keep an open mind! Improving documentation, bug hunting, or writing tutorials ar
 
 ### Contributions we are NOT looking for
 
-Please do not open issues for support questions. If you have any questions join our guilded server(https://guilded.gg/itohs-place) or use GitHubs discussion feature.
+Please do not open issues for support questions. If you have any questions join our guilded server(https://guilded.gg/guildeno) or use GitHubs discussion feature.
 
 # Ground Rules
 
 ### How should a contribution look like
 
-- Ensure cross-platform compatibility for every change that's accepted. Windows, Mac and Linux.
-- Create issues for any changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
-- Don't add any classes to the codebase unless absolutely needed since this is a functional lib.
-- Keep feature additions as small as possible, preferably one feature per PR.
-- Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
+-   Ensure cross-platform compatibility for every change that's accepted. Windows, Mac and Linux.
+-   Create issues for any changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
+-   Don't add any classes to the codebase unless absolutely needed since this is a functional lib.
+-   Keep feature additions as small as possible, preferably one feature per PR.
+-   Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 
 # Your First Contribution
 
@@ -51,11 +51,11 @@ Please use the appropriate issue template.
 
 ### How to submit a PR
 
-- Before submiting a PR open an issue so we all can discuss how the best approach could be.
-- Every contribution must be made under the Apache-2.0 License. We don't accept any sub licensing or simmilar.
-- For every new feature added you have to add at least one test case for it.
-- Do NOT use code from others unless they give you explicit permission.
-- Changelogs are important so always add a note to `CHANGELOG.md`.
+-   Before submiting a PR open an issue so we all can discuss how the best approach could be.
+-   Every contribution must be made under the Apache-2.0 License. We don't accept any sub licensing or simmilar.
+-   For every new feature added you have to add at least one test case for it.
+-   Do NOT use code from others unless they give you explicit permission.
+-   Changelogs are important so always add a note to `CHANGELOG.md`.
 
 ### Small PRs
 
@@ -63,10 +63,10 @@ Small contributions such as fixing spelling errors, adding comments etc. can be 
 
 > As a rule of thumb, changes are obvious fixes if they do not introduce any new functionality or creative thinking. As long as the change does not affect functionality, some likely examples include the following:
 >
-> - Spelling / grammar fixes
-> - Typo correction, white space and formatting changes
-> - Comment clean up
-> - Bug fixes that change default return values or error codes stored in constants
+> -   Spelling / grammar fixes
+> -   Typo correction, white space and formatting changes
+> -   Comment clean up
+> -   Bug fixes that change default return values or error codes stored in constants
 
 ### Code review process
 
@@ -76,8 +76,8 @@ After feedback has been given we expect responses within one week. After one wee
 
 ### Style Guide
 
-- Use Prettier to format your changes
-- Use underscores as a separator in filenames.
-- Comply with these guidelines for inclusive code.
-- Functions should not have more than 4 arguments. If so additional arguments should be placed into an object.
-- Top-level functions should not use fat arrow syntax.
+-   Use Prettier to format your changes
+-   Use underscores as a separator in filenames.
+-   Comply with these guidelines for inclusive code.
+-   Functions should not have more than 4 arguments. If so additional arguments should be placed into an object.
+-   Top-level functions should not use fat arrow syntax.
