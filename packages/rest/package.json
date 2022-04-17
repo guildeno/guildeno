@@ -1,6 +1,6 @@
 {
     "name": "@guildeno/rest",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Guildeno Rest",
     "keywords": [
         "javascript",
@@ -41,12 +41,12 @@
     "bugs": {
         "url": "https://github.com/guildeno/guildeno/issues"
     },
-    "gitHead": "c4e66448c127439479d3dff0cb90cdd6b8d18797",
+    "gitHead": "8480adb10e564af766ba3cc29780f0ae5ddc8185",
     "dependencies": {
         "node-fetch": "^2.6.7"
     },
     "devDependencies": {
-        "@guildeno/types": "^0.1.0",
+        "@guildeno/types": "^0.1.3",
         "@types/node-fetch": "^2.6.1"
     }
 }
