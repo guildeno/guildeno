@@ -11,6 +11,7 @@ Guildeno follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 # WIP
 
 This module is still version 0 so heavy in development. Expect breaking changes without a major bump.
+In addition to that, Guilded's API is also in development as of now. This means that bots could stop working unexpectedly.
 
 Right now Guildeno isn't my top priority so version 1 may come late.
 
@@ -22,7 +23,7 @@ Before contributing, please read our [Contributing Guidelines](https://github.co
 
 Guildeno is heavily inspired by [Discordeno](https://github.com/discordeno/discordeno) so check it out!
 
-### Name
+## Name
 
 Initially I wanted this library to run on over the `Deno` runtime and use `dnt` (hence the name Guildeno) to convert it to a `Node.js` compatible package.
 But due to Guilded's decision to make gateway authentication over a header this is currently impossible to implement.
