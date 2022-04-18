@@ -1,0 +1,44 @@
+{
+    "name": "@guildeno/fraz",
+    "version": "0.1.3",
+    "description": "Build bots with Guildeno easier",
+    "keywords": [
+        "javascript",
+        "api",
+        "library",
+        "typescript",
+        "guilded",
+        "guilded-bot",
+        "guilded-api",
+        "guildeno",
+        "guilded-fraz",
+        "fraz"
+    ],
+    "author": "ITOH <to@itoh.at>",
+    "homepage": "https://github.com/guildeno/guildeno#readme",
+    "license": "Apache-2.0",
+    "main": "lib/index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "lib"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/guildeno/guildeno.git"
+    },
+    "scripts": {
+        "tsc": "tsc",
+        "test": "jest --config jest.config.js"
+    },
+    "bugs": {
+        "url": "https://github.com/guildeno/guildeno/issues"
+    },
+    "dependencies": {
+        "@guildeno/gateway": "^0.1.3",
+        "@guildeno/rest": "^0.1.3",
+        "@guildeno/types": "^0.1.3"
+    }
+}
