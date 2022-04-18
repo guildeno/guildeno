@@ -27,8 +27,8 @@ import {
     Webhook,
     UpdateWebhook,
 } from "@guildeno/types";
-import { Routes } from "../routes";
-import { HttpMethod } from "../types";
+import { Routes } from "./routes";
+import { HttpMethod } from "./types";
 
 export function createHelpers(op: CreateHelpersOptions) {
     return {

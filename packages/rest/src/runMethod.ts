@@ -50,6 +50,8 @@ export async function runMethod<T>(
                  * Sadly Guilded does not provide any useful headers as of now, therefore this needs thinking.
                  */
                 if (options?.tryCounts === undefined || options.tryCounts < rest.maxRetryAmount) {
+                    await new Promise((res) => setTimeout(res, 2000));
+
                     return await rest.fetch<T>(method, route, body, {
                         noAuthorization: options?.noAuthorization,
                         tryCounts: options?.tryCounts ? options.tryCounts + 1 : 1,
