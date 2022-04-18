@@ -9,16 +9,11 @@ export async function runMethod<T>(
     body?: object,
     options?: { noAuthorization?: boolean; tryCounts?: number },
 ): Promise<T> {
-    const headers = {
-        "Content-Type": "application/json",
-    } as { "Content-Type": string; Authorization?: string };
-
-    if (options?.noAuthorization !== false) {
-        headers.Authorization = `Bearer ${rest.token}`;
-    }
-
     const response = await fetch(`${rest.baseUrl}/v${rest.version}${route}`, {
-        headers,
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: options?.noAuthorization !== false ? `Bearer ${rest.token}` : undefined,
+        } as { "Content-Type": string; Authorization?: string },
         method,
         body: body ? JSON.stringify(body) : undefined,
         timeout: rest.timeout,
