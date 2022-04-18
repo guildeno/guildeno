@@ -41,7 +41,7 @@
     "bugs": {
         "url": "https://github.com/guildeno/guildeno/issues"
     },
-    "gitHead": "8480adb10e564af766ba3cc29780f0ae5ddc8185",
+    "gitHead": "90be7d815cf0d6402b3267787baeea73508be309",
     "dependencies": {
         "node-fetch": "^2.6.7"
     },
