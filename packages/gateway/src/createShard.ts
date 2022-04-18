@@ -15,8 +15,12 @@ export function createShard(options: CreateShardOptions) {
         socket: undefined as WebSocket | undefined,
         /** Token which is used to authenticate with Guilded. */
         token: options.token,
-        /** Url which should be connected to. */
-        url: options.url,
+        /**
+         * Url which should be connected to.
+         *
+         * @default "wss://api.guilded.gg/v1/websocket"
+         */
+        url: options.url ?? "wss://api.guilded.gg/v1/websocket",
 
         /*
          * ----------
@@ -84,7 +88,7 @@ export type CreateShardOptions = {
     /** Token which is used to authenticate with Guilded. */
     token: string;
     /** Url which should be connected to. */
-    url: string;
+    url?: string;
 
     /*
      * ----------
