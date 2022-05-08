@@ -1,6 +1,6 @@
 {
     "name": "@guildeno/types",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Guildeno Types",
     "keywords": [
         "guildeno"
@@ -28,5 +28,5 @@
     "bugs": {
         "url": "https://github.com/guildeno/guildeno/issues"
     },
-    "gitHead": "063916efe55c43779ef8f8ed6bc52d299f70738a"
+    "gitHead": "f1c9040fda43d99917448b69d7e4ee6995af02c7"
 }

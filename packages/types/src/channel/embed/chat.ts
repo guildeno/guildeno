@@ -17,7 +17,7 @@ export type ChatEmbed = {
      *
      * @maximum 2048
      */
-    definition?: string;
+    description?: string;
     /**
      * URL to linkify the `title` field.
      *

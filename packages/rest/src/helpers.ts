@@ -336,13 +336,24 @@ export function createHelpers(op: CreateHelpersOptions) {
         },
         /** Update this webhook from this server. */
         updateWebhook: async (serverId: string, webhookId: string, options: UpdateWebhook) => {
-            return op
+            return await op
                 .fetch<{ webhook: Webhook }>("PUT", op.routes.updateWebhook(serverId, webhookId), options)
                 .then((res) => res.webhook);
         },
         /** Delete this webhook from this server. */
         deleteWebhook: async (serverId: string, webhookId: string) => {
-            return op.fetch<undefined>("DELETE", op.routes.addMemberToGroup(serverId, webhookId));
+            return await op.fetch<undefined>("DELETE", op.routes.addMemberToGroup(serverId, webhookId));
+        },
+        // TODO: move this to a route if guilded adds one
+        /** Send a message through a webhook. */
+        sendWebhook: async (
+            webhookId: string,
+            webhookToken: string,
+            options: Pick<CreateMessage, "content" | "embeds">,
+        ) => {
+            return await op.fetch("POST", `https://media.guilded.gg/webhooks/${webhookId}/${webhookToken}`, options, {
+                noAuthorization: true,
+            });
         },
     };
 }
@@ -350,6 +361,11 @@ export function createHelpers(op: CreateHelpersOptions) {
 export type Helpers = ReturnType<typeof createHelpers>;
 
 export type CreateHelpersOptions = {
-    fetch<T>(method: HttpMethod, route: string, body?: object): Promise<T>;
+    fetch<T>(
+        method: HttpMethod,
+        route: string,
+        body?: object,
+        options?: { noAuthorization?: boolean; tryCounts?: number },
+    ): Promise<T>;
     routes: Routes;
 };
