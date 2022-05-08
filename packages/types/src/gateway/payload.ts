@@ -1,4 +1,7 @@
+import { Doc } from "../channel/doc/doc";
+import { ListItem } from "../channel/list/item";
 import { ChatMessage } from "../channel/message/message";
+import { ServerChannel } from "../channel/server/channel";
 import { Ban } from "../server/ban/ban";
 import { ServerMember } from "../server/member/member";
 import { Webhook } from "../webhook/webhook";
@@ -201,6 +204,39 @@ export type TeamRolesUpdatedMemberRoles = {
     roleIds: number[];
 };
 
+/** A channel has been created in a team. */
+export type TeamChannelCreated = DispatchPayload<"TeamChannelCreated", TeamRolesUpdatedData>;
+
+/** Data of a `TeamChannelCreated` event payload */
+export type TeamChannelCreatedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** Data of the channel which has been created. */
+    channel: ServerChannel;
+};
+
+/** A channel has been updated in a team. */
+export type TeamChannelUpdated = DispatchPayload<"TeamChannelUpdated", TeamRolesUpdatedData>;
+
+/** Data of a `TeamChannelUpdated` event payload */
+export type TeamChannelUpdatedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** Data of the channel which has been updated. */
+    channel: ServerChannel;
+};
+
+/** A channel has been updated in a team. */
+export type TeamChannelDeleted = DispatchPayload<"TeamChannelDeleted", TeamRolesUpdatedData>;
+
+/** Data of a `TeamChannelDeleted` event payload */
+export type TeamChannelDeletedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** Data of the channel which has been deleted. */
+    channel: ServerChannel;
+};
+
 /** A webhook has been created in a server. */
 export type TeamWebhookCreated = DispatchPayload<"TeamWebhookCreated", TeamWebhookCreatedData>;
 
@@ -221,6 +257,94 @@ export type TeamWebhookUpdatedData = {
     serverId: string;
     /** Webhook which got updated. */
     webhook: Webhook;
+};
+
+/** A doc has been created. */
+export type DocCreated = DispatchPayload<"DocCreated", DocCreatedData>;
+
+/** Data of `DocCreated` event payload. */
+export type DocCreatedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** Doc which has been created. */
+    doc: Doc;
+};
+
+/** A doc has been updated. */
+export type DocUpdated = DispatchPayload<"DocUpdated", DocUpdatedData>;
+
+/** Data of `DocUpdated` event payload. */
+export type DocUpdatedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** Doc which has been updated. */
+    doc: Doc;
+};
+
+/** A doc has been deleted. */
+export type DocDeleted = DispatchPayload<"DocDeleted", DocDeletedData>;
+
+/** Data of `DocDeleted` event payload. */
+export type DocDeletedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** Doc which has been deleted. */
+    doc: Doc;
+};
+
+/** A list item has been created. */
+export type ListItemCreated = DispatchPayload<"ListItemCreated", ListItemCreatedData>;
+
+/** Data of `ListItemCreated` event payload. */
+export type ListItemCreatedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** List item which has been created. */
+    listItem: ListItem;
+};
+
+/** A list item has been updated. */
+export type ListItemUpdated = DispatchPayload<"ListItemUpdated", ListItemUpdatedData>;
+
+/** Data of `ListItemUpdated` event payload. */
+export type ListItemUpdatedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** List item which has been updated. */
+    listItem: ListItem;
+};
+
+/** A list item has been deleted. */
+export type ListItemDeleted = DispatchPayload<"ListItemDeleted", ListItemDeletedData>;
+
+/** Data of `ListItemDeleted` event payload. */
+export type ListItemDeletedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** List item which has been deleted. */
+    listItem: ListItem;
+};
+
+/** A list item has been completed. */
+export type ListItemCompleted = DispatchPayload<"ListItemCompleted", ListItemCompletedData>;
+
+/** Data of `ListItemCompleted` event payload. */
+export type ListItemCompletedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** List item which has been completed. */
+    listItem: ListItem;
+};
+
+/** A list item has been uncompleted. */
+export type ListItemUncompleted = DispatchPayload<"ListItemUncompleted", ListItemUncompletedData>;
+
+/** Data of `ListItemUncompleted` event payload. */
+export type ListItemUncompletedData = {
+    /** Id of the server. */
+    serverId: string;
+    /** List item which has been uncompleted. */
+    listItem: ListItem;
 };
 
 export type IncomingPayload = GatewayWelcome | IncomingDispatchPayload;

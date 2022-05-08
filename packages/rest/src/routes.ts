@@ -17,6 +17,33 @@ export const routes = {
      */
 
     /**
+     * Create a channel.
+     *
+     * @method POST
+     */
+    createChannel: () => {
+        return "/channels";
+    },
+
+    /**
+     * Get a channel.
+     *
+     * @method GET
+     */
+    getChannel: (channelId: string) => {
+        return `/channels/${channelId}`;
+    },
+
+    /**
+     * Delete a channel.
+     *
+     * @method DELETE
+     */
+    deleteChannel: (channelId: string) => {
+        return `/channels/${channelId}`;
+    },
+
+    /**
      * Create a channel message.
      *
      * @method POST

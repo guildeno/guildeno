@@ -1,3 +1,5 @@
+import { ChatEmbed } from "../embed/chat";
+
 /** Type definition of how a update message object should look like. */
 export type UpdateMessage = {
     /**
@@ -8,4 +10,14 @@ export type UpdateMessage = {
      * @maximum 4000
      */
     content: string;
+    /**
+     * At this time, only one embed is supported per message.
+     * Attachments are unsupported.
+     * If you need to send more than one embed or upload attachments,
+     * consider creating a message via a webhook.
+     *
+     * @minimum 1
+     * @maximum 1
+     */
+    embeds?: ChatEmbed[];
 };

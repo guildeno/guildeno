@@ -9,5 +9,16 @@ export type EventName =
     | "TeamMemberUnbanned"
     | "TeamMemberUpdated"
     | "teamRolesUpdated"
+    | "TeamChannelCreated"
+    | "TeamChannelUpdated"
+    | "TeamChannelDeleted"
     | "TeamWebhookCreated"
-    | "TeamWebhookUpdated";
+    | "TeamWebhookUpdated"
+    | "DocCreated"
+    | "DocUpdated"
+    | "DocDeleted"
+    | "ListItemCreated"
+    | "ListItemUpdated"
+    | "ListItemDeleted"
+    | "ListItemCompleted"
+    | "ListItemUncompleted";

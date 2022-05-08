@@ -22,6 +22,11 @@ export type ForumThread = {
      * then this field can be ignored
      * since the value of this field will then always be `Ann6LewA`
      */
+    createdBy: string;
+    /**
+     * Id of the webhook which created this forum thread,
+     * if this forum thread has been created by a webhook.
+     */
     createdByWebhookId?: string;
     /**
      * Timestamp in ISO 8601 format,

@@ -1,3 +1,5 @@
+import { ChatEmbed } from "../embed/chat";
+
 /** Type definition of how a create message object should look like. */
 export type CreateMessage = {
     /**
@@ -6,6 +8,11 @@ export type CreateMessage = {
      * who have been mentioned or replied to.
      */
     isPrivate?: boolean;
+    /**
+     * If set to `true`,
+     * this message will not notify any mentioned users or roles.
+     */
+    isSilent?: boolean;
     /**
      * Message Ids to reply to.
      *
@@ -21,4 +28,14 @@ export type CreateMessage = {
      * @maximum 4000 characters
      */
     content: string;
+    /**
+     * At this time, only one embed is supported per message.
+     * Attachments are unsupported.
+     * If you need to send more than one embed or upload attachments,
+     * consider creating a message via a webhook.
+     *
+     * @minimum 1
+     * @maximum 1
+     */
+    embeds?: ChatEmbed[];
 };

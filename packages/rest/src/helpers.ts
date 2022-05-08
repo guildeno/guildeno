@@ -26,6 +26,8 @@ import {
     CreateWebhook,
     Webhook,
     UpdateWebhook,
+    CreateChannel,
+    ServerChannel,
 } from "@guildeno/types";
 import { Routes } from "./routes";
 import { HttpMethod } from "./types";
@@ -37,6 +39,25 @@ export function createHelpers(op: CreateHelpersOptions) {
          * CHANNELS
          * ----------
          */
+
+        /** Create a channel. */
+        createChannel: async (channel: CreateChannel) => {
+            return await op
+                .fetch<{ channel: ServerChannel }>("POST", op.routes.createChannel(), channel)
+                .then((res) => res.channel);
+        },
+
+        /** Get a channel. */
+        getChannel: async (channelId: string) => {
+            return await op
+                .fetch<{ channel: ServerChannel }>("GET", op.routes.getChannel(channelId))
+                .then((res) => res.channel);
+        },
+
+        /** Delete a channel. */
+        deleteChannel: async (channelId: string) => {
+            return await op.fetch("DELETE", op.routes.deleteChannel(channelId));
+        },
 
         /** Send a message to the specified channel. */
         createMessage: async (channelId: string, options: CreateMessage) => {

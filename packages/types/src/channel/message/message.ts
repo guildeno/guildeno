@@ -1,3 +1,4 @@
+import { ChatEmbed } from "../embed/chat";
 import { ChatMessageType } from "./type";
 
 /** Type definition of a general chat message. */
@@ -19,6 +20,12 @@ export type ChatMessage = {
     channelId: string;
     /** Content of the message in markdown format. */
     content: string;
+    /**
+     * Embeds of this message.
+     * @minimum 1
+     * @maxiumum 2
+     */
+    embeds?: ChatEmbed[];
     /** Ids of the messages which have been replied to. */
     replyMessageIds?: string[];
     /**

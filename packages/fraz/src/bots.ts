@@ -1,8 +1,8 @@
-import { createRest, Rest } from "@guildeno/rest";
+import { createRest, Helpers, Rest } from "@guildeno/rest";
 import { createShard, Shard } from "@guildeno/gateway";
 import { createEventHandle, EventHandlers } from "./eventHandlers";
 
-export function createBot(options: CreateBotOptions): { rest: Rest; shard: Shard; start: () => void } {
+export function createBot(options: CreateBotOptions): { rest: Rest; shard: Shard; start: () => void } & Helpers {
     const handle = createEventHandle(options.eventHandlers);
 
     const rest = createRest({ token: options.token });
@@ -14,6 +14,8 @@ export function createBot(options: CreateBotOptions): { rest: Rest; shard: Shard
         start: function () {
             this.shard.connect();
         },
+
+        ...rest.helpers,
     };
 }
 

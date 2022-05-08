@@ -12,6 +12,10 @@ export type User = {
     type: UserType;
     /** Name of the user. */
     name: string;
+    /** URL of the avatar image associated with this user. */
+    avatar?: string;
+    /** URL of the banner image associated with this user. */
+    banner?: string;
     /**
      * Timestamp in ISO 8601 format,
      * of when the user was created at.
