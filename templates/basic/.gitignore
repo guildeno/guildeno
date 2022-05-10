@@ -1,0 +1,5 @@
+# Secret configs
+.env
+
+# Mystery ignored this file
+!commands

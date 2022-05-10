@@ -23,6 +23,7 @@ import {
     ListItemDeletedData,
     ListItemCompletedData,
     ListItemUncompletedData,
+    GatewayWelcomeData,
 } from "@guildeno/types";
 
 export function createEventHandle(handlers: EventHandlers) {
@@ -52,19 +53,28 @@ export function createEventHandle(handlers: EventHandlers) {
     };
 
     return async (payload: IncomingPayload) => {
-        if (payload.op !== OpCode.Dispatch) {
-            return;
-        }
-        handlers.raw?.(payload);
-        await handlers.dispatch?.(payload);
+        switch (payload.op) {
+            case OpCode.Dispatch: {
+                handlers.raw?.(payload);
+                await handlers.dispatch?.(payload);
 
-        h[payload.t]?.(payload.d as any);
+                h[payload.t]?.(payload.d as any);
+
+                break;
+            }
+            case OpCode.Welcome: {
+                handlers.welcome?.(payload.d);
+                break;
+            }
+        }
     };
 }
 
 export type EventHandlers = {
     raw?: (payload: IncomingPayload) => unknown;
     dispatch?: (payload: IncomingPayload) => Promise<unknown>;
+
+    welcome?: (payload: GatewayWelcomeData) => unknown;
 
     chatMessageCreated?: (data: ChatMessageCreatedData) => unknown;
     chatMessageUpdated?: (data: ChatMessageUpdatedData) => unknown;
