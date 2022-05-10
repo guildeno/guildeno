@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://guildeno.js.org/blog</id>
+    <title>Guildeno Blog</title>
+    <updated>2022-02-03T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://guildeno.js.org/blog"/>
+    <subtitle>Guildeno Blog</subtitle>
+    <icon>https://guildeno.js.org/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>welcome</id>
+        <link href="https://guildeno.js.org/blog/welcome"/>
+        <updated>2022-02-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hello and Welcome to Guildeno an API wrapper for the Guilded lib powered by Node.js using TypeScript.]]></summary>
+        <content type="html"><![CDATA[<p>Hello and Welcome to Guildeno an API wrapper for the Guilded lib powered by Node.js using TypeScript.</p>]]></content>
+        <author>
+            <name>ITOH</name>
+            <uri>https://github.com/itohatweb</uri>
+        </author>
+        <category label="guildeno" term="guildeno"/>
+        <category label="hello" term="hello"/>
+    </entry>
+</feed>
