@@ -16,6 +16,7 @@ jobs:
           cache: npm
       - name: Build website
         run: |
+          cd website
           npm ci
           npm run build
       # Popular action to deploy to GitHub Pages:
