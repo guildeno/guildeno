@@ -10,7 +10,7 @@ export type CreateChannel = RequireAtLeastOne<
          * @minimum 1
          * @maximum 100
          */
-        name?: string;
+        name: string;
         /**
          * Topic of the channel.
          *
@@ -20,7 +20,7 @@ export type CreateChannel = RequireAtLeastOne<
         topic?: string;
         // TODO: figure out default
         /** Type of the channel. */
-        type?: ChannelType;
+        type: ChannelType;
         /**
          * Server in which the channel should be created in.
          *
