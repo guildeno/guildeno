@@ -28,6 +28,7 @@ import {
     UpdateWebhook,
     CreateChannel,
     ServerChannel,
+    UpdateChannel,
 } from "@guildeno/types";
 import { Routes } from "./routes";
 import { HttpMethod } from "./types";
@@ -51,6 +52,13 @@ export function createHelpers(op: CreateHelpersOptions) {
         getChannel: async (channelId: string) => {
             return await op
                 .fetch<{ channel: ServerChannel }>("GET", op.routes.getChannel(channelId))
+                .then((res) => res.channel);
+        },
+
+        /** Update a channel. */
+        updateChannel: async (channelId: string, options: UpdateChannel) => {
+            return await op
+                .fetch<{ channel: ServerChannel }>("PATCH", op.routes.updateChannel(channelId), options)
                 .then((res) => res.channel);
         },
 

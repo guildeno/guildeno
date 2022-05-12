@@ -14,7 +14,8 @@ export type CreateChannel = RequireAtLeastOne<
         /**
          * Topic of the channel.
          *
-         * @minimum 512
+         * @minimum 1
+         * @maximum 512
          */
         topic?: string;
         // TODO: figure out default

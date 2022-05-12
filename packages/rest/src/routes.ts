@@ -35,6 +35,15 @@ export const routes = {
     },
 
     /**
+     * Update a channel.
+     *
+     * @method PATCH
+     */
+    updateChannel: (channelId: string) => {
+        return `/channels/${channelId}`;
+    },
+
+    /**
      * Delete a channel.
      *
      * @method DELETE
