@@ -7,45 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Removed
-
--   Support for Deno. As of now this is Node.js only.
+## [0.5.0] - 2022-05-12
 
 ### Added
 
--   Readme: Server invite shield
--   Readme: Guildeno Logo
+-   Website base
+-   Update Channel Type, Route and Helper
 
 ### Fixed
 
--   Changelog: Version links
--   Readme: type
-
-## [0.1.0] - 2021-03-28
-
-### Added
-
--   LICENSE
--   README
-
--   GitHub issue templates
--   GitHub CODEOWNERS
--   Contributing guidelines
-
--   vscode settings
--   Prettier config
-
--   Handlers: ChatChanelTyping
-
--   Shard: createShard
--   Shard: heartbeat
--   Shard: manager
-
--   Rest: request manager
--   Rest: run method
-
--   Utils: collection + tests
--   Utils: constants
+-   `name` and `type` are not optional for `CreateChannel`
 
 <!-- ## [1.0.0] - YYYY-MM-DD
 
@@ -63,5 +34,5 @@ TYPES:
 - Security
  -->
 
-[unreleased]: https://github.com/guildeno/guildeno/compare/0.1.0...main
-[0.1.0]: https://github.com/guildeno/guildeno/compare/d8289344f143271f1156dbec582e6209bd95260b...0.1.0
+[unreleased]: https://github.com/guildeno/guildeno/compare/0.5.0...main
+[0.5.0]: https://github.com/guildeno/guildeno/compare/0.4.2...0.5.0
