@@ -34,5 +34,5 @@ TYPES:
 - Security
  -->
 
-[unreleased]: https://github.com/guildeno/guildeno/compare/0.5.0...main
-[0.5.0]: https://github.com/guildeno/guildeno/compare/0.4.2...0.5.0
+[unreleased]: https://github.com/guildeno/guildeno/compare/v0.5.0...main
+[0.5.0]: https://github.com/guildeno/guildeno/compare/0.4.2...v0.5.0
