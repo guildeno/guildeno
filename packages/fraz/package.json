@@ -41,5 +41,8 @@
         "@guildeno/rest": "^0.4.1",
         "@guildeno/types": "^0.4.1"
     },
-    "gitHead": "dec400d5ad8d7bae418bb3e406505e172b75db7e"
+    "gitHead": "dec400d5ad8d7bae418bb3e406505e172b75db7e",
+    "devDependencies": {
+        "@types/ws": "^8.5.3"
+    }
 }
