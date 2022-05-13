@@ -43,6 +43,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Create a channel.
          *
          * @permissions `Manage channels`
+         * @eventName `TeamChannelCreated`
          */
         createChannel: async (channel: CreateChannel) => {
             return await op
@@ -65,6 +66,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Update a channel.
          *
          * @permissions `Manage channels`
+         * @eventName `TeamChannelUpdated`
          */
         updateChannel: async (channelId: string, options: UpdateChannel) => {
             return await op
@@ -76,6 +78,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Delete a channel.
          *
          * @permissions `Manage channels`
+         * @eventName `TeamChannelDeleted`
          */
         deleteChannel: async (channelId: string) => {
             return await op.fetch("DELETE", op.routes.deleteChannel(channelId));
@@ -88,6 +91,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * - `Send private messages` when `isPrivate` is set to `true`
          * - `Upload media` when the message contains media
          * - `Can mention @everyone and @here` when the message mentions \@everyone or \@here
+         * @eventName `ChatMessageCreated`
          */
         createMessage: async (channelId: string, options: CreateMessage) => {
             return await op
@@ -126,6 +130,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * - `Send private messages` when the message is private and you did not create this message
          * - `Upload media` when the message contains media
          * - `Can mention @everyone and @here` when the message mentions \@everyone or \@here
+         * @eventName `ChatMessageUpdated`
          */
         updateMessage: async (channelId: string, messageId: string, options: UpdateMessage) => {
             return await op
@@ -137,6 +142,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Delete this message from this channel.
          *
          * @permissions `Manage messages` if deleting a message which has not been created by you
+         * @eventName `ChatMessageDeleted`
          */
         deleteMessage: async (channelId: string, messageId: string) => {
             return await op.fetch<undefined>("DELETE", op.routes.deleteChannelMessage(channelId, messageId));
@@ -153,6 +159,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          *
          * - `Change Nickname` if changing own nickname, unless the bot also has `Manage Nicknames`
          * - `Manage Nicknames` if changing the own nickname or the one of a different user. Note: You cannot change the nickname of a member with a higher role than you.
+         * @eventName `TeamMemberUpdated`
          */
         changeNickname: async (serverId: string, userId: string, nickname: string) => {
             return await op
@@ -165,6 +172,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          *
          * - `Change Nickname` if changing own nickname, unless the bot also has `Manage Nicknames`
          * - `Manage Nicknames` if changing the own nickname or the one of a different user. Note: You cannot change the nickname of a member with a higher role than you.
+         * @eventName `TeamMemberUpdated`
          */
         removeNickname: async (serverId: string, userId: string) => {
             return await op.fetch<undefined>("DELETE", op.routes.removeMemberNickname(serverId, userId));
@@ -183,6 +191,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Kick a member from this server.
          *
          * @permissions `Kick / Ban members` when you do not kick yourself
+         * @eventName `TeamMemberRemoved`
          */
         kickMember: async (serverId: string, userId: string) => {
             return await op.fetch<undefined>("DELETE", op.routes.kickMember(serverId, userId));
@@ -207,6 +216,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Ban a member from a server.
          *
          * @permissions `Kick / Ban members`
+         * @eventName `TeamMemberBanned`
          */
         createBan: async (serverId: string, userId: string, options?: CreateBan) => {
             return await op
@@ -229,6 +239,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Revoke ban from a member in a server.
          *
          * @permissions `Kick / Ban members`
+         * @eventName `TeamMemberUnbanned`
          */
         removeBan: async (serverId: string, userId: string) => {
             return await op.fetch<undefined>("DELETE", op.routes.removeBan(serverId, userId));
@@ -272,6 +283,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Create a new item in this list channel.
          *
          * @permissions `View list items`, `Create list items`
+         * @eventName `ListItemCreated`
          */
         createListItem: async (channelId: string, options: CreateListItem) => {
             return await op
@@ -306,6 +318,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          *
          * @permissions `View list items`
          * - `Manage list item messages` when the item was not created by you
+         * @eventName `ListItemUpdated`
          */
         updateListItem: async (channelId: string, listItemId: string, options: UpdateListItem) => {
             return await op
@@ -318,6 +331,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          *
          * @permissions `View list items`
          * - `Manage list item messages` when the item was not created by you
+         * @eventName `ListItemDeleted`
          */
         removeListItem: async (channelId: string, listItemId: string) => {
             return await op.fetch<undefined>("DELETE", op.routes.removeListItem(channelId, listItemId));
@@ -333,6 +347,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Create a new doc in this channel.
          *
          * @permissions `View docs`, `Create docs`
+         * @eventName `DocCreated`
          */
         createDoc: async (channelId: string, options: CreateDoc) => {
             return await op.fetch<{ doc: Doc }>("POST", op.routes.createDoc(channelId), options).then((res) => res.doc);
@@ -363,6 +378,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          *
          * @permissions `View docs`
          * - `Manage docs` when you did not create this doc
+         * @eventName `DocUpdated`
          */
         updateDoc: async (channelId: string, docId: number, options: UpdateDoc) => {
             return await op
@@ -375,6 +391,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          *
          * @permissions `View docs`
          * - `Remove docs` when you did not create this doc
+         * @eventName `DocDeleted`
          */
         removeDoc: async (channelId: string, docId: number) => {
             return await op.fetch<undefined>("DELETE", op.routes.removeDoc(channelId, docId));
@@ -461,6 +478,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Assign a role to a member.
          *
          * @permissions `Manage roles` when the role is not self-assignable or you do not add it to yourself
+         * @eventName `teamRolesUpdated`
          */
         addRoleToMember: async (serverId: string, userId: string, roleId: number) => {
             return await op.fetch<undefined>("PUT", op.routes.addRoleToMember(serverId, userId, roleId));
@@ -470,6 +488,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Remove a role from a member.
          *
          * @permissions `Manage roles` when the role is not self-assignable or you do not remove it from yourself
+         * @eventName `teamRolesUpdated`
          */
         removeRoleFromMember: async (serverId: string, userId: string, roleId: number) => {
             return await op.fetch<undefined>("DELETE", op.routes.removeRoleFromMember(serverId, userId, roleId));
@@ -497,6 +516,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Create a new webhook in this server for this channel.
          *
          * @permissions `Manage webhooks`
+         * @eventName `TeamWebhookCreated`
          */
         createWebhook: async (serverId: string, options: CreateWebhook) => {
             return await op
@@ -530,6 +550,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Update this webhook from this server.
          *
          * @permissions `Manage webhooks`
+         * @eventName `TeamWebhookUpdated`
          */
         updateWebhook: async (serverId: string, webhookId: string, options: UpdateWebhook) => {
             return await op
@@ -541,6 +562,7 @@ export function createHelpers(op: CreateHelpersOptions) {
          * Delete this webhook from this server.
          *
          * @permissions `Manage webhooks`
+         * @eventName `TeamWebhookUpdated`
          */
         deleteWebhook: async (serverId: string, webhookId: string) => {
             return await op.fetch<undefined>("DELETE", op.routes.addMemberToGroup(serverId, webhookId));

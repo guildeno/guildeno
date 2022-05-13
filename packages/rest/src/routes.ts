@@ -21,6 +21,7 @@ export const routes = {
      *
      * @method POST
      * @permissions `Manage channels`
+     * @eventName `TeamChannelCreated`
      */
     createChannel: () => {
         return "/channels";
@@ -41,6 +42,7 @@ export const routes = {
      *
      * @method PATCH
      * @permissions `Manage channels`
+     * @eventName `TeamChannelUpdated`
      */
     updateChannel: (channelId: string) => {
         return `/channels/${channelId}`;
@@ -51,6 +53,7 @@ export const routes = {
      *
      * @method DELETE
      * @permissions `Manage channels`
+     * @eventName `TeamChannelDeleted`
      */
     deleteChannel: (channelId: string) => {
         return `/channels/${channelId}`;
@@ -64,6 +67,7 @@ export const routes = {
      * - `Send private messages` when `isPrivate` is set to `true`
      * - `Upload media` when the message contains media
      * - `Can mention @everyone and @here` when the message mentions \@everyone or \@here
+     * @eventName `ChatMessageCreated`
      */
     createChannelMessage: (channelId: string) => {
         return `/channels/${channelId}/messages`;
@@ -117,6 +121,7 @@ export const routes = {
      * - `Send private messages` when the message is private and you did not create this message
      * - `Upload media` when the message contains media
      * - `Can mention @everyone and @here` when the message mentions \@everyone or \@here
+     * @eventName `ChatMessageUpdated`
      */
     updateChannelMessage: (channelId: string, messageId: string) => {
         return `/channels/${channelId}/messages/${messageId}`;
@@ -127,6 +132,7 @@ export const routes = {
      *
      * @method DELETE
      * @permissions `Manage messages` if deleting a message which has not been created by you
+     * @eventName `ChatMessageDeleted`
      */
     deleteChannelMessage: (channelId: string, messageId: string) => {
         return `/channels/${channelId}/messages/${messageId}`;
@@ -145,6 +151,7 @@ export const routes = {
      * @permissions
      * - `Change Nickname` if changing own nickname, unless the bot also has `Manage Nicknames`
      * - `Manage Nicknames` if changing the own nickname or the one of a different user. Note: You cannot change the nickname of a member with a higher role than you.
+     * @eventName `TeamMemberUpdated`
      */
     changeMemberNickname: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}/nickname`;
@@ -157,6 +164,7 @@ export const routes = {
      * @permissions
      * - `Change Nickname` if changing own nickname, unless the bot also has `Manage Nicknames`
      * - `Manage Nicknames` if changing the own nickname or the one of a different user. Note: You cannot change the nickname of a member with a higher role than you.
+     * @eventName `TeamMemberUpdated`
      */
     removeMemberNickname: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}/nickname`;
@@ -176,6 +184,7 @@ export const routes = {
      *
      * @method DELETE
      * @permissions `Kick / Ban members` when you do not kick yourself
+     * @eventName `TeamMemberRemoved`
      */
     kickMember: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}`;
@@ -201,6 +210,7 @@ export const routes = {
      *
      * @method POST
      * @permissions `Kick / Ban members`
+     * @eventName `TeamMemberBanned`
      */
     createBan: (serverId: string, userId: string) => {
         return `/servers/${serverId}/bans/${userId}`;
@@ -221,6 +231,7 @@ export const routes = {
      *
      * @method DELETE
      * @permissions `Kick / Ban members`
+     * @eventName `TeamMemberUnbanned`
      */
     removeBan: (serverId: string, userId: string) => {
         return `/servers/${serverId}/bans/${userId}`;
@@ -263,6 +274,7 @@ export const routes = {
      *
      * @method POST
      * @permissions `View list items`, `Create list items`
+     * @eventName `ListItemCreated`
      */
     createListItem: (channelId: string) => {
         return `/channels/${channelId}/items`;
@@ -294,6 +306,7 @@ export const routes = {
      * @method PUT
      * @permissions `View list items`
      * - `Manage list item messages` when the item was not created by you
+     * @eventName `ListItemUpdated`
      */
     updateListItem: (channelId: string, listItemId: string) => {
         return `/channels/${channelId}/items/${listItemId}`;
@@ -305,6 +318,7 @@ export const routes = {
      * @method DELETE
      * @permissions `View list items`
      * - `Manage list item messages` when the item was not created by you
+     * @eventName `ListItemDeleted`
      */
     removeListItem: (channelId: string, listItemId: string) => {
         return `/channels/${channelId}/items/${listItemId}`;
@@ -321,6 +335,7 @@ export const routes = {
      *
      * @method POST
      * @permissions `View docs`, `Create docs`
+     * @eventName `DocCreated`
      */
     createDoc: (channelId: string) => {
         return `/channels/${channelId}/docs`;
@@ -362,6 +377,7 @@ export const routes = {
      * @method PUT
      * @permissions `View docs`
      * - `Manage docs` when you did not create this doc
+     * @eventName `DocUpdated`
      */
     updateDoc: (channelId: string, docId: number) => {
         return `/channels/${channelId}/docs/${docId}`;
@@ -373,6 +389,7 @@ export const routes = {
      * @method DELETE
      * @permissions `View docs`
      * - `Remove docs` when you did not create this doc
+     * @eventName `DocDeleted`
      */
     removeDoc: (channelId: string, docId: number) => {
         return `/channels/${channelId}/docs/${docId}`;
@@ -463,6 +480,7 @@ export const routes = {
      *
      * @method PUT
      * @permissions `Manage roles` when the role is not self-assignable or you do not add it to yourself
+     * @eventName `teamRolesUpdated`
      */
     addRoleToMember: (serverId: string, userId: string, roleId: number) => {
         return `/servers/${serverId}/members/${userId}/roles/${roleId}`;
@@ -473,6 +491,7 @@ export const routes = {
      *
      * @method DELETE
      * @permissions `Manage roles` when the role is not self-assignable or you do not remove it from yourself
+     * @eventName `teamRolesUpdated`
      */
     removeRoleFromMember: (serverId: string, userId: string, roleId: number) => {
         return `/servers/${serverId}/members/${userId}/roles/${roleId}`;
@@ -498,6 +517,7 @@ export const routes = {
      *
      * @method POST
      * @permissions `Manage webhooks`
+     * @eventName `TeamWebhookCreated`
      */
     createWebhook: (serverId: string) => {
         return `/servers/${serverId}/webhooks`;
@@ -528,6 +548,7 @@ export const routes = {
      *
      * @method PUT
      * @permissions `Manage webhooks`
+     * @eventName `TeamWebhookUpdated`
      */
     updateWebhook: (serverId: string, webhookId: string) => {
         return `/servers/${serverId}/webhooks/${webhookId}`;
@@ -538,6 +559,7 @@ export const routes = {
      *
      * @method DELETE
      * @permissions `Manage webhooks`
+     * @eventName `TeamWebhookUpdated`
      */
     deleteWebhook: (serverId: string, webhookId: string) => {
         return `/servers/${serverId}/webhooks/${webhookId}`;
