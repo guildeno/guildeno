@@ -13,4 +13,10 @@ export type ServerMember = {
      * of when the member has joined the server.
      */
     joinedAt: string;
+    /**
+     * Whether this member is the owner of this server.
+     *
+     * @default false
+     */
+    isOwner?: boolean;
 };
