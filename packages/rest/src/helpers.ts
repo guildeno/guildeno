@@ -338,6 +338,28 @@ export function createHelpers(op: CreateHelpersOptions) {
         },
 
         /**
+         * Complete an item from this list.
+         *
+         * @method POST
+         * @permissions `View list items`, `Complete list items`
+         * @eventName `ListItemCompleted`
+         */
+        completeListItem: async (channelId: string, listItemId: string) => {
+            return await op.fetch<undefined>("POST", op.routes.completeListItem(channelId, listItemId));
+        },
+
+        /**
+         * Uncomplete an item from this list.
+         *
+         * @method DELETE
+         * @permissions `View list items`, `Complete list items`
+         * @eventName `ListItemUncompleted`
+         */
+        uncompleteListItem: async (channelId: string, listItemId: string) => {
+            return await op.fetch<undefined>("DELETE", op.routes.uncompleteListItem(channelId, listItemId));
+        },
+
+        /**
          * ----------
          * DOC
          * ----------

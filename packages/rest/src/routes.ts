@@ -325,6 +325,28 @@ export const routes = {
     },
 
     /**
+     * Complete an item from a list.
+     *
+     * @method POST
+     * @permissions `View list items`, `Complete list items`
+     * @eventName `ListItemCompleted`
+     */
+    completeListItem: (channelId: string, listItemId: string) => {
+        return `/channels/${channelId}/items/${listItemId}/complete`;
+    },
+
+    /**
+     * Uncomplete an item from a list.
+     *
+     * @method DELETE
+     * @permissions `View list items`, `Complete list items`
+     * @eventName `ListItemUncompleted`
+     */
+    uncompleteListItem: (channelId: string, listItemId: string) => {
+        return `/channels/${channelId}/items/${listItemId}/complete`;
+    },
+
+    /**
      * ----------
      * DOC
      * ----------
