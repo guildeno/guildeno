@@ -1,7 +1,8 @@
+import { RequireAtLeastOne } from "../../utils";
 import { ChatEmbed } from "../embed/chat";
 
 /** Type definition of how a update message object should look like. */
-export type UpdateMessage = {
+export type UpdateMessage = RequireAtLeastOne<{
     /**
      * Content of the message.
      * In markdown format.
@@ -20,4 +21,4 @@ export type UpdateMessage = {
      * @maximum 1
      */
     embeds?: ChatEmbed[];
-};
+}>;
