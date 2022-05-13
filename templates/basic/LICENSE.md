@@ -1,1 +1,1 @@
-/config/workspace/guildeno/guildeno/LICENSE.md
+../../LICENSE.md
