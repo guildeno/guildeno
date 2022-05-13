@@ -60,6 +60,7 @@ export const routes = {
     createChannelMessage: (channelId: string) => {
         return `/channels/${channelId}/messages`;
     },
+
     /**
      * Get messages from a channel.
      *
@@ -86,6 +87,7 @@ export const routes = {
 
         return base;
     },
+
     /**
      * Get a message from a channel.
      *
@@ -94,6 +96,7 @@ export const routes = {
     getChannelMessage: (channelId: string, messageId: string) => {
         return `/channels/${channelId}/messages/${messageId}`;
     },
+
     /**
      * Update a message in a channel.
      *
@@ -102,6 +105,7 @@ export const routes = {
     updateChannelMessage: (channelId: string, messageId: string) => {
         return `/channels/${channelId}/messages/${messageId}`;
     },
+
     /**
      * Delete a message from a channel.
      *
@@ -125,6 +129,7 @@ export const routes = {
     changeMemberNickname: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}/nickname`;
     },
+
     /**
      * Remove a member's nickname.
      *
@@ -133,6 +138,7 @@ export const routes = {
     removeMemberNickname: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}/nickname`;
     },
+
     /**
      * Get a member from a server.
      *
@@ -141,6 +147,7 @@ export const routes = {
     getMember: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}`;
     },
+
     /**
      * Kick a member from a server.
      *
@@ -149,6 +156,7 @@ export const routes = {
     kickMember: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}`;
     },
+
     /**
      * Get all members from a server.
      *
@@ -163,6 +171,7 @@ export const routes = {
      * BANS
      * ----------
      */
+
     /**
      * Ban a member from a server.
      *
@@ -171,6 +180,7 @@ export const routes = {
     createBan: (serverId: string, userId: string) => {
         return `/servers/${serverId}/bans/${userId}`;
     },
+
     /**
      * Get a ban from a server.
      *
@@ -179,6 +189,7 @@ export const routes = {
     getBan: (serverId: string, userId: string) => {
         return `/servers/${serverId}/bans/${userId}`;
     },
+
     /**
      * Revoke a server ban.
      *
@@ -187,6 +198,7 @@ export const routes = {
     removeBan: (serverId: string, userId: string) => {
         return `/servers/${serverId}/bans/${userId}`;
     },
+
     /**
      * Get all the bans of a server.
      *
@@ -225,6 +237,7 @@ export const routes = {
     createListItem: (channelId: string) => {
         return `/channels/${channelId}/items`;
     },
+
     /**
      * Get all items from a list.
      *
@@ -233,6 +246,7 @@ export const routes = {
     getListItems: (channelId: string) => {
         return `/channels/${channelId}/items`;
     },
+
     /**
      * Get an item from a list.
      *
@@ -241,6 +255,7 @@ export const routes = {
     getListItem: (channelId: string, listItemId: string) => {
         return `/channels/${channelId}/items${listItemId}`;
     },
+
     /**
      * Update an item of a list.
      *
@@ -249,6 +264,7 @@ export const routes = {
     updateListItem: (channelId: string, listItemId: string) => {
         return `/channels/${channelId}/items/${listItemId}`;
     },
+
     /**
      * Remove an item from a list.
      *
@@ -272,6 +288,7 @@ export const routes = {
     createDoc: (channelId: string) => {
         return `/channels/${channelId}/docs`;
     },
+
     /**
      * Get the docs from a channel.
      *
@@ -290,6 +307,7 @@ export const routes = {
 
         return base;
     },
+
     /**
      * Get a doc from a channel.
      *
@@ -298,6 +316,7 @@ export const routes = {
     getDoc: (channelId: string, docId: number) => {
         return `/channels/${channelId}/docs/${docId}`;
     },
+
     /**
      * Update a doc of a channel.
      *
@@ -306,6 +325,7 @@ export const routes = {
     updateDoc: (channelId: string, docId: number) => {
         return `/channels/${channelId}/docs/${docId}`;
     },
+
     /**
      * Remove a doc from a channel.
      *
@@ -344,6 +364,7 @@ export const routes = {
     awardXpToMember: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}/xp`;
     },
+
     /**
      * Award XP to all members of a role.
      *
@@ -382,6 +403,7 @@ export const routes = {
     addMemberToGroup: (groupId: string, userId: string) => {
         return `/groups/${groupId}/members/${userId}`;
     },
+
     /**
      * Revoke a member's access from a group.
      *
@@ -390,6 +412,7 @@ export const routes = {
     removeMemberFromGroup: (groupId: string, userId: string) => {
         return `/groups/${groupId}/members/${userId}`;
     },
+
     /**
      * Assign a role to a member.
      *
@@ -398,6 +421,7 @@ export const routes = {
     addRoleToMember: (serverId: string, userId: string, roleId: number) => {
         return `/servers/${serverId}/members/${userId}/roles/${roleId}`;
     },
+
     /**
      * Remove a role from a member.
      *
@@ -406,6 +430,7 @@ export const routes = {
     removeRoleFromMember: (serverId: string, userId: string, roleId: number) => {
         return `/servers/${serverId}/members/${userId}/roles/${roleId}`;
     },
+
     /**
      * Get a member's roles.
      *
@@ -429,6 +454,7 @@ export const routes = {
     createWebhook: (serverId: string) => {
         return `/servers/${serverId}/webhooks`;
     },
+
     /**
      * Get the webhooks of a channel.
      *
@@ -437,6 +463,7 @@ export const routes = {
     getWebhooks: (serverId: string, channelId: string) => {
         return `/servers/${serverId}/webhooks?channelId=${channelId}`;
     },
+
     /**
      * Get a specific webhook.
      *
@@ -445,6 +472,7 @@ export const routes = {
     getWebhook: (serverId: string, webhookId: string) => {
         return `/servers/${serverId}/webhooks/${webhookId}`;
     },
+
     /**
      * Update a webhook.
      *
@@ -453,6 +481,7 @@ export const routes = {
     updateWebhook: (serverId: string, webhookId: string) => {
         return `/servers/${serverId}/webhooks/${webhookId}`;
     },
+
     /**
      * Delete a webhook.
      *
