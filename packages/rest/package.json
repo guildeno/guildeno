@@ -1,6 +1,6 @@
 {
     "name": "@guildeno/rest",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "description": "Guildeno Rest",
     "keywords": [
         "javascript",
@@ -46,7 +46,7 @@
         "node-fetch": "^2.6.7"
     },
     "devDependencies": {
-        "@guildeno/types": "^0.6.0",
+        "@guildeno/types": "^0.6.1",
         "@types/node-fetch": "^2.6.1"
     }
 }

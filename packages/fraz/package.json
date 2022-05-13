@@ -1,6 +1,6 @@
 {
     "name": "@guildeno/fraz",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "description": "Build bots with Guildeno easier",
     "keywords": [
         "javascript",
@@ -37,9 +37,9 @@
         "url": "https://github.com/guildeno/guildeno/issues"
     },
     "dependencies": {
-        "@guildeno/gateway": "^0.6.0",
-        "@guildeno/rest": "^0.6.0",
-        "@guildeno/types": "^0.6.0"
+        "@guildeno/gateway": "^0.6.1",
+        "@guildeno/rest": "^0.6.1",
+        "@guildeno/types": "^0.6.1"
     },
     "gitHead": "dec400d5ad8d7bae418bb3e406505e172b75db7e",
     "devDependencies": {
