@@ -13,6 +13,8 @@ export type CreateMessage = RequireAtLeastOne<
         /**
          * If set to `true`,
          * this message will not notify any mentioned users or roles.
+         *
+         * @default false
          */
         isSilent?: boolean;
         /**

@@ -34,6 +34,13 @@ export type ChatMessage = {
      * who have been mentioned or replied to.
      */
     isPrivate?: boolean;
+    /**
+     * If set to `true`,
+     * this message did not notify mention or reply recipients.
+     *
+     * @default false
+     */
+    isSilent?: boolean;
     /** Timestamp in ISO 8601 format of when the message was created at. */
     createdAt: string;
     /**
