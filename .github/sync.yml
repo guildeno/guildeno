@@ -1,3 +1,3 @@
 guildeno/template-basic:
-    - source: template/basic/
+    - source: templates/basic/
       dest: ./
