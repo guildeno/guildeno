@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.1] - 2022-05-13
+
+### Fixed
+
+-   Rest rate limit handler now uses `retry-after` Header if it's provided.
+-   `UpdateMessage` does not require `content` if `embeds` is provided.
+
 ## [0.6.0] - 2022-05-13
 
 ### Added
@@ -51,6 +58,7 @@ TYPES:
 - Security
  -->
 
-[unreleased]: https://github.com/guildeno/guildeno/compare/v0.6.0...main
+[unreleased]: https://github.com/guildeno/guildeno/compare/v0.6.1...main
+[0.6.1]: https://github.com/guildeno/guildeno/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/guildeno/guildeno/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/guildeno/guildeno/compare/0.4.2...v0.5.0
