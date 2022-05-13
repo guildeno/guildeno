@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import {
     ChatMessage,
     CreateMessage,
@@ -289,7 +287,7 @@ export function createHelpers(op: CreateHelpersOptions) {
 
         /** Award XP to all members of this role. */
         awardXpToRole: async (serverId: string, roleId: number, options: AwardXp) => {
-            return await op.fetch<undefined>("POST", op.routes.awardXpToRole(serverId, roleId));
+            return await op.fetch<undefined>("POST", op.routes.awardXpToRole(serverId, roleId), options);
         },
 
         /**
@@ -350,7 +348,7 @@ export function createHelpers(op: CreateHelpersOptions) {
 
         /** Create a new webhook in this server for this channel. */
         createWebhook: async (serverId: string, options: CreateWebhook) => {
-            return op
+            return await op
                 .fetch<{ webhook: Webhook }>("POST", op.routes.createWebhook(serverId), options)
                 .then((res) => res.webhook);
         },
