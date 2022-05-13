@@ -1,3 +1,0 @@
-guildeno/template-basic:
-    - source: template/basic/
-      dest: ./
