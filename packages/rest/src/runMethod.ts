@@ -45,7 +45,10 @@ export async function runMethod<T>(
                  * Sadly Guilded does not provide any useful headers as of now, therefore this needs thinking.
                  */
                 if (options?.tryCounts === undefined || options.tryCounts < rest.maxRetryAmount) {
-                    await new Promise((res) => setTimeout(res, 2000));
+                    // Sometimes Guilded returns a `retry-after` header.
+                    const retryAfter = response.headers.get("retry-after");
+
+                    await new Promise((res) => setTimeout(res, retryAfter ? ~~retryAfter : 3000));
 
                     return await rest.fetch<T>(method, route, body, {
                         noAuthorization: options?.noAuthorization,
