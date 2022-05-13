@@ -10,8 +10,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@guildeno/fraz": "^0.4.0",
-        "@guildeno/types": "^0.4.1",
+        "@guildeno/fraz": "^0.6.0",
+        "@guildeno/types": "^0.6.0",
         "colorette": "^2.0.16",
         "dotenv": "^16.0.0",
         "ts-node": "^10.7.0"

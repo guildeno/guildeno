@@ -3,7 +3,7 @@ import { bot } from "..";
 import { cache } from "../cache";
 import { humanizeMilliseconds } from "../utils/humanizeMilliseconds";
 
-const membersInCooldown = new Map<string, Cooldown>();
+export const membersInCooldown = new Map<string, Cooldown>();
 
 type Cooldown = {
     used: number;
@@ -51,12 +51,3 @@ cache.inhibitors.set("cooldown", async function (message, command) {
 
     return false;
 });
-
-setInterval(() => {
-    const now = Date.now();
-
-    membersInCooldown.forEach((cooldown, key) => {
-        if (cooldown.timestamp > now) return;
-        membersInCooldown.delete(key);
-    });
-}, 30000);
