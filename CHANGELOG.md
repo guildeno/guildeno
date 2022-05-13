@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2022-05-13
+
+### Added
+
+-   Documentation about which permission(s) are required when using a route
+-   Documentation about which websocket event gets emitted when a related route gets used
+-   `completeListItem` Route and Helper
+-   `uncompleteListItem` Route and Helper
+-   `isOwner` property to `ServerMember`
+-   `isSilent` property to `ChatMessage`
+-   Default value of `isSilent` for `CreateMessage`
+
+### Fixed
+
+-   Rest Helper `awardXpToRole` now passes the award options
+-   Rest Helper `createWebhook` now `await`s the fetch
+
 ## [0.5.0] - 2022-05-12
 
 ### Added
@@ -34,5 +51,6 @@ TYPES:
 - Security
  -->
 
-[unreleased]: https://github.com/guildeno/guildeno/compare/v0.5.0...main
+[unreleased]: https://github.com/guildeno/guildeno/compare/v0.6.0...main
+[0.5.0]: https://github.com/guildeno/guildeno/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/guildeno/guildeno/compare/0.4.2...v0.5.0
