@@ -20,6 +20,7 @@ export const routes = {
      * Create a channel.
      *
      * @method POST
+     * @permissions `Manage channels`
      */
     createChannel: () => {
         return "/channels";
@@ -29,6 +30,7 @@ export const routes = {
      * Get a channel.
      *
      * @method GET
+     * @permissions `Manage channels`
      */
     getChannel: (channelId: string) => {
         return `/channels/${channelId}`;
@@ -38,6 +40,7 @@ export const routes = {
      * Update a channel.
      *
      * @method PATCH
+     * @permissions `Manage channels`
      */
     updateChannel: (channelId: string) => {
         return `/channels/${channelId}`;
@@ -47,6 +50,7 @@ export const routes = {
      * Delete a channel.
      *
      * @method DELETE
+     * @permissions `Manage channels`
      */
     deleteChannel: (channelId: string) => {
         return `/channels/${channelId}`;
@@ -56,6 +60,10 @@ export const routes = {
      * Create a channel message.
      *
      * @method POST
+     * @permissions `Read messages`, `Send messages`
+     * - `Send private messages` when `isPrivate` is set to `true`
+     * - `Upload media` when the message contains media
+     * - `Can mention @everyone and @here` when the message mentions \@everyone or \@here
      */
     createChannelMessage: (channelId: string) => {
         return `/channels/${channelId}/messages`;
@@ -65,6 +73,8 @@ export const routes = {
      * Get messages from a channel.
      *
      * @method GET
+     * @permissions `Read messages`
+     * - `Access moderator view` when `includePrivate` is set to true
      */
     getChannelMessages: (channelId: string, options?: GetMessages) => {
         let base = `/channels/${channelId}/messages?`;
@@ -92,6 +102,8 @@ export const routes = {
      * Get a message from a channel.
      *
      * @method GET
+     * @permissions `Read messages`
+     * - `Access moderator view` when `includePrivate` is set to true
      */
     getChannelMessage: (channelId: string, messageId: string) => {
         return `/channels/${channelId}/messages/${messageId}`;
@@ -101,6 +113,10 @@ export const routes = {
      * Update a message in a channel.
      *
      * @method PUT
+     * @permissions `Read messages`, `Send messages`
+     * - `Send private messages` when the message is private and you did not create this message
+     * - `Upload media` when the message contains media
+     * - `Can mention @everyone and @here` when the message mentions \@everyone or \@here
      */
     updateChannelMessage: (channelId: string, messageId: string) => {
         return `/channels/${channelId}/messages/${messageId}`;
@@ -110,6 +126,7 @@ export const routes = {
      * Delete a message from a channel.
      *
      * @method DELETE
+     * @permissions `Manage messages` if deleting a message which has not been created by you
      */
     deleteChannelMessage: (channelId: string, messageId: string) => {
         return `/channels/${channelId}/messages/${messageId}`;
@@ -125,6 +142,9 @@ export const routes = {
      * Change a member's nickname.
      *
      * @method PUT
+     * @permissions
+     * - `Change Nickname` if changing own nickname, unless the bot also has `Manage Nicknames`
+     * - `Manage Nicknames` if changing the own nickname or the one of a different user. Note: You cannot change the nickname of a member with a higher role than you.
      */
     changeMemberNickname: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}/nickname`;
@@ -134,6 +154,9 @@ export const routes = {
      * Remove a member's nickname.
      *
      * @method DELETE
+     * @permissions
+     * - `Change Nickname` if changing own nickname, unless the bot also has `Manage Nicknames`
+     * - `Manage Nicknames` if changing the own nickname or the one of a different user. Note: You cannot change the nickname of a member with a higher role than you.
      */
     removeMemberNickname: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}/nickname`;
@@ -152,6 +175,7 @@ export const routes = {
      * Kick a member from a server.
      *
      * @method DELETE
+     * @permissions `Kick / Ban members` when you do not kick yourself
      */
     kickMember: (serverId: string, userId: string) => {
         return `/servers/${serverId}/members/${userId}`;
@@ -176,6 +200,7 @@ export const routes = {
      * Ban a member from a server.
      *
      * @method POST
+     * @permissions `Kick / Ban members`
      */
     createBan: (serverId: string, userId: string) => {
         return `/servers/${serverId}/bans/${userId}`;
@@ -185,6 +210,7 @@ export const routes = {
      * Get a ban from a server.
      *
      * @method GET
+     * @permissions `Kick / Ban members`
      */
     getBan: (serverId: string, userId: string) => {
         return `/servers/${serverId}/bans/${userId}`;
@@ -194,6 +220,7 @@ export const routes = {
      * Revoke a server ban.
      *
      * @method DELETE
+     * @permissions `Kick / Ban members`
      */
     removeBan: (serverId: string, userId: string) => {
         return `/servers/${serverId}/bans/${userId}`;
@@ -203,6 +230,7 @@ export const routes = {
      * Get all the bans of a server.
      *
      * @method GET
+     * @permissions `Kick / Ban members`
      */
     getBans: (serverId: string) => {
         return `/servers/${serverId}/bans`;
@@ -218,6 +246,7 @@ export const routes = {
      * Create a thread in a forum channel.
      *
      * @method POST
+     * @permissions `Read forums`, `Create forum topics`
      */
     createForumThread: (channelId: string) => {
         return `/channels/${channelId}/forum`;
@@ -233,6 +262,7 @@ export const routes = {
      * Create a new list item.
      *
      * @method POST
+     * @permissions `View list items`, `Create list items`
      */
     createListItem: (channelId: string) => {
         return `/channels/${channelId}/items`;
@@ -242,6 +272,7 @@ export const routes = {
      * Get all items from a list.
      *
      * @method GET
+     * @permissions `View list items`
      */
     getListItems: (channelId: string) => {
         return `/channels/${channelId}/items`;
@@ -251,6 +282,7 @@ export const routes = {
      * Get an item from a list.
      *
      * @method GET
+     * @permissions `View list items`
      */
     getListItem: (channelId: string, listItemId: string) => {
         return `/channels/${channelId}/items${listItemId}`;
@@ -260,6 +292,8 @@ export const routes = {
      * Update an item of a list.
      *
      * @method PUT
+     * @permissions `View list items`
+     * - `Manage list item messages` when the item was not created by you
      */
     updateListItem: (channelId: string, listItemId: string) => {
         return `/channels/${channelId}/items/${listItemId}`;
@@ -269,6 +303,8 @@ export const routes = {
      * Remove an item from a list.
      *
      * @method DELETE
+     * @permissions `View list items`
+     * - `Manage list item messages` when the item was not created by you
      */
     removeListItem: (channelId: string, listItemId: string) => {
         return `/channels/${channelId}/items/${listItemId}`;
@@ -284,6 +320,7 @@ export const routes = {
      * Create a new doc in a channel.
      *
      * @method POST
+     * @permissions `View docs`, `Create docs`
      */
     createDoc: (channelId: string) => {
         return `/channels/${channelId}/docs`;
@@ -293,6 +330,7 @@ export const routes = {
      * Get the docs from a channel.
      *
      * @method GET
+     * @permissions `View docs`
      */
     getDocs: (channelId: string, options?: GetDocs) => {
         let base = `/channels${channelId}/docs?`;
@@ -312,6 +350,7 @@ export const routes = {
      * Get a doc from a channel.
      *
      * @method GET
+     * @permissions `View docs`
      */
     getDoc: (channelId: string, docId: number) => {
         return `/channels/${channelId}/docs/${docId}`;
@@ -321,6 +360,8 @@ export const routes = {
      * Update a doc of a channel.
      *
      * @method PUT
+     * @permissions `View docs`
+     * - `Manage docs` when you did not create this doc
      */
     updateDoc: (channelId: string, docId: number) => {
         return `/channels/${channelId}/docs/${docId}`;
@@ -330,6 +371,8 @@ export const routes = {
      * Remove a doc from a channel.
      *
      * @method DELETE
+     * @permissions `View docs`
+     * - `Remove docs` when you did not create this doc
      */
     removeDoc: (channelId: string, docId: number) => {
         return `/channels/${channelId}/docs/${docId}`;
@@ -399,6 +442,7 @@ export const routes = {
      * Grant a member access to a group.
      *
      * @method PUT
+     * @permissions `Manage groups`
      */
     addMemberToGroup: (groupId: string, userId: string) => {
         return `/groups/${groupId}/members/${userId}`;
@@ -408,6 +452,7 @@ export const routes = {
      * Revoke a member's access from a group.
      *
      * @method DELETE
+     * @permissions `Manage groups`
      */
     removeMemberFromGroup: (groupId: string, userId: string) => {
         return `/groups/${groupId}/members/${userId}`;
@@ -417,6 +462,7 @@ export const routes = {
      * Assign a role to a member.
      *
      * @method PUT
+     * @permissions `Manage roles` when the role is not self-assignable or you do not add it to yourself
      */
     addRoleToMember: (serverId: string, userId: string, roleId: number) => {
         return `/servers/${serverId}/members/${userId}/roles/${roleId}`;
@@ -426,6 +472,7 @@ export const routes = {
      * Remove a role from a member.
      *
      * @method DELETE
+     * @permissions `Manage roles` when the role is not self-assignable or you do not remove it from yourself
      */
     removeRoleFromMember: (serverId: string, userId: string, roleId: number) => {
         return `/servers/${serverId}/members/${userId}/roles/${roleId}`;
@@ -450,6 +497,7 @@ export const routes = {
      * Create a new webhook.
      *
      * @method POST
+     * @permissions `Manage webhooks`
      */
     createWebhook: (serverId: string) => {
         return `/servers/${serverId}/webhooks`;
@@ -459,6 +507,7 @@ export const routes = {
      * Get the webhooks of a channel.
      *
      * @method GET
+     * @permissions `Manage webhooks`
      */
     getWebhooks: (serverId: string, channelId: string) => {
         return `/servers/${serverId}/webhooks?channelId=${channelId}`;
@@ -468,6 +517,7 @@ export const routes = {
      * Get a specific webhook.
      *
      * @method GET
+     * @permissions `Manage webhooks`
      */
     getWebhook: (serverId: string, webhookId: string) => {
         return `/servers/${serverId}/webhooks/${webhookId}`;
@@ -477,6 +527,7 @@ export const routes = {
      * Update a webhook.
      *
      * @method PUT
+     * @permissions `Manage webhooks`
      */
     updateWebhook: (serverId: string, webhookId: string) => {
         return `/servers/${serverId}/webhooks/${webhookId}`;
@@ -486,6 +537,7 @@ export const routes = {
      * Delete a webhook.
      *
      * @method DELETE
+     * @permissions `Manage webhooks`
      */
     deleteWebhook: (serverId: string, webhookId: string) => {
         return `/servers/${serverId}/webhooks/${webhookId}`;
