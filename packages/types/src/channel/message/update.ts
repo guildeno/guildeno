@@ -10,7 +10,7 @@ export type UpdateMessage = RequireAtLeastOne<{
      * @minimum 1
      * @maximum 4000
      */
-    content: string;
+    content?: string;
     /**
      * At this time, only one embed is supported per message.
      * Attachments are unsupported.
