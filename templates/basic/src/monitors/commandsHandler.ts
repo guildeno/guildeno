@@ -13,10 +13,6 @@ cache.monitors.set("commandHandler", {
     ignoreBots: true,
     ignoreUpdates: true,
     execute: async (message) => {
-        if (!message.content.startsWith(configs.defaultPrefix)) {
-            return;
-        }
-
         const prefix = parsePrefix(message.serverId);
         if (!message.content.startsWith(prefix)) return;
 
@@ -65,7 +61,7 @@ export function logCommand(
 }
 
 export function parsePrefix(guildId: string | undefined): string {
-    return guildId ? cache.guildPrefixes.get(guildId) ?? configs.defaultPrefix : configs.defaultPrefix;
+    return guildId ? cache.serverPrefixes.get(guildId) ?? configs.defaultPrefix : configs.defaultPrefix;
 }
 
 export function parseCommand(commandName: string) {

@@ -14,7 +14,7 @@ export function createSubcommand<T extends readonly ArgumentDefinition[]>(comman
     toRegister.set(subcommand.key, subcommand);
 }
 
-export function loadSumcommands() {
+export function loadSubcommands() {
     const order = [...toRegister.keys()];
     order.sort((a, b) => a.localeCompare(b));
 

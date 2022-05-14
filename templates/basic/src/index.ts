@@ -1,7 +1,7 @@
 import { createBot } from "@guildeno/fraz";
 import { cache } from "./cache";
 import { configs } from "./configs";
-import { loadSumcommands } from "./utils";
+import { loadSubcommands } from "./utils";
 import { loadFolder } from "./utils/loadFolder";
 
 export let bot: ReturnType<typeof createBot>;
@@ -10,7 +10,7 @@ async function main() {
     const folders = ["events", "monitors", "arguments", "inhibitors", "tasks", "commands"];
     await Promise.all(folders.map((path) => loadFolder(`./src/${path}`)));
 
-    loadSumcommands();
+    loadSubcommands();
 
     bot = createBot({
         token: configs.token,

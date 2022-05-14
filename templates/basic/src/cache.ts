@@ -6,7 +6,7 @@ export const cache = {
     commands: new Collection<string, Command<any>>(),
     eventHandlers: {} as EventHandlers,
     generalCooldown: new Collection<string, number>(),
-    guildPrefixes: new Collection<string, string>(),
+    serverPrefixes: new Collection<string, string>(),
     inhibitors: new Collection<string, Inhibitor>(),
     monitors: new Collection<string, Monitor>(),
     permissionLevels: new Collection<keyof typeof PermissionLevels, PermissionLevelChecker>(),
